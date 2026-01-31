@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { background-color: #e0e4e8; display: flex; justify-content: center; padding: 30px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .map-container { background-color: #ffffff; border: 1px solid #455a64; box-shadow: 0 10px 20px rgba(0,0,0,0.2); padding: 20px; }
+        .wall { stroke: #263238; stroke-width: 5; fill: none; }
+        .room-divider { stroke: #546e7a; stroke-width: 2; fill: none; }
+        .label { fill: #263238; font-size: 11px; font-weight: bold; text-transform: uppercase; }
+        .furniture { fill: #cfd8dc; stroke: #90a4ae; stroke-width: 1; }
+        .hazard { fill: #ff5252; opacity: 0.3; }
+        .interactive { fill: #81d4fa; stroke: #0288d1; }
+        .grid { stroke: #eceff1; stroke-width: 1; }
+    </style>
+</head>
+<body>
+
+<div class="map-container">
+    <svg width="750" height="500" viewBox="0 0 750 500">
+        <defs>
+            <pattern id="gridPattern" width="25" height="25" patternUnits="userSpaceOnUse">
+                <path d="M 25 0 L 0 0 0 25" fill="none" stroke="#f0f4f7" stroke-width="1"/>
+            </pattern>
+        </defs>
+        <rect width="750" height="500" fill="url(#gridPattern)" />
+
+        <!-- Периметр медблока -->
+        <path class="wall" d="M 50 50 H 700 V 450 H 50 Z" />
+
+        <!-- Операционная (Центр) -->
+        <rect x="250" y="150" width="250" height="200" class="room-divider" />
+        <text x="310" y="170" class="label">Операционная №1</text>
+        <rect x="330" y="230" width="80" height="40" rx="10" ry="10" class="furniture" /> <!-- Стол -->
+        <text x="345" y="255" style="fill:#546e7a; font-size:9px;">Стол Хагера</text>
+
+        <!-- Лаборатория био-протезов (Север) -->
+        <path class="wall" d="M 50 50 V 150 H 300 V 50" />
+        <text x="70" y="80" class="label">Лаборатория протезов</text>
+        <rect x="220" y="70" width="60" height="20" class="interactive" /> <!-- Терминал врача -->
+        <circle cx="100" cy="110" r="15" class="furniture" /> <!-- Капсула -->
+        <circle cx="150" cy="110" r="15" class="furniture" /> <!-- Капсула -->
+
+        <!-- Морг / Хранилище биоматериала (Юго-запад) -->
+        <path class="wall" d="M 50 350 H 250 V 450 H 50" />
+        <text x="70" y="380" class="label">Хранилище / Морг</text>
+        <rect x="60" y="410" width="40" height="20" class="furniture" />
+        <rect x="110" y="410" width="40" height="20" class="furniture" />
+        <rect x="160" y="410" width="40" height="20" class="furniture" />
+
+        <!-- Стерилизационная (Восток) -->
+        <path class="wall" d="M 550 50 V 450" />
+        <text x="570" y="80" class="label">Стерилизатор</text>
+        <rect x="580" y="150" width="100" height="200" class="hazard" /> <!-- Зона газа/осколков -->
+        <text x="590" y="250" style="fill:#b71c1c; font-size:10px;">ОСКОЛКИ / ГАЗ</text>
+
+        <!-- Переходы -->
+        <line x1="50" y1="220" x2="50" y2="280" stroke="#fff" stroke-width="8" />
+        <text x="10" y="250" class="label" transform="rotate(-90 10,250)">ИЗ ЖИЛОГО СЕКТОРА</text>
+
+        <line x1="700" y1="220" x2="700" y2="280" stroke="#fff" stroke-width="8" />
+        <text x="720" y="250" class="label" transform="rotate(90 720,250)">В РЕАКТОРНЫЙ ЗАЛ</text>
+
+        <text x="50" y="35" style="font-size: 16px; font-weight: bold; fill: #263238;">СХЕМА: МЕДИЦИНСКИЙ БЛОК (УРОВЕНЬ 3)</text>
+    </svg>
+</div>
+
+</body>
+</html>
