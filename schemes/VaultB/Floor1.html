@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body { background-color: #f0f0f0; display: flex; justify-content: center; padding: 40px; font-family: Arial, sans-serif; }
+    .map-container { background-color: #ffffff; border: 1px solid #999; box-shadow: 5px 5px 0px #ccc; padding: 20px; }
+    .wall { stroke: #333; stroke-width: 4; fill: none; }
+    .furniture { fill: #e0e0e0; stroke: #666; stroke-width: 1; }
+    .zone-label { fill: #333; font-size: 11px; font-weight: bold; text-transform: uppercase; }
+    .poi { fill: #555; font-size: 10px; font-style: italic; }
+    .marker { fill: #777; }
+    .grid { stroke: #ddd; stroke-width: 1; }
+</style>
+</head>
+<body>
+
+<div class="map-container">
+    <svg width="700" height="500" viewBox="0 0 700 500">
+        <!-- Сетка чертежа -->
+        <defs>
+            <pattern id="smallGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+                <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#eee" stroke-width="1"/>
+            </pattern>
+        </defs>
+        <rect width="700" height="500" fill="url(#smallGrid)" />
+
+        <!-- Основные стены шлюза -->
+        <path class="wall" d="M 100 100 H 600 V 400 H 100 Z" />
+        
+        <!-- Входная группа (Взломанная дверь) -->
+        <line x1="100" y1="200" x2="100" y2="300" stroke="#f0f0f0" stroke-width="6" />
+        <path d="M 80 200 L 100 200 M 80 300 L 100 300" stroke="#333" stroke-width="2" />
+        <text x="40" y="255" class="zone-label" transform="rotate(-90 40,255)">Внешний вход</text>
+
+        <!-- КПП / Пост охраны -->
+        <rect x="140" y="120" width="100" height="70" class="furniture" />
+        <text x="145" y="140" class="zone-label">Пост охраны</text>
+        <circle cx="210" cy="160" r="4" class="marker" /> 
+        <text x="190" y="180" class="poi">Ключ-карта</text>
+
+        <!-- Зона завалов (Баррикады) -->
+        <path d="M 280 100 L 320 220 L 290 400" fill="none" stroke="#999" stroke-width="2" stroke-dasharray="5,5" />
+        <rect x="290" y="180" width="40" height="15" class="furniture" transform="rotate(15 290 180)" />
+        <rect x="300" y="240" width="35" height="15" class="furniture" transform="rotate(-10 300 240)" />
+        <text x="310" y="380" class="zone-label">Линия баррикад</text>
+
+        <!-- Технический узел (Люк в тоннель) -->
+        <rect x="520" y="120" width="40" height="40" class="furniture" />
+        <text x="510" y="110" class="zone-label">Тех. шахта 7-Б</text>
+
+        <!-- Стеллажи и ящики (Лут) -->
+        <rect x="540" y="250" width="20" height="60" class="furniture" />
+        <rect x="540" y="320" width="20" height="40" class="furniture" />
+        <text x="500" y="300" class="poi">Склады</text>
+
+        <!-- Опасность (Газ) -->
+        <circle cx="450" cy="350" r="20" fill="none" stroke="#ccc" stroke-dasharray="2,2" />
+        <text x="410" y="385" class="poi" style="fill:#999">Утечка газа</text>
+
+        <!-- Переход вглубь -->
+        <line x1="600" y1="210" x2="600" y2="290" stroke="#f0f0f0" stroke-width="6" />
+        <text x="610" y="255" class="zone-label">В жилой сектор</text>
+
+        <!-- Заголовок -->
+        <text x="100" y="70" style="font-size: 18px; font-weight: bold; fill: #333;">План-схема: Уровень 1 (Приемный шлюз)</text>
+        <text x="100" y="90" style="font-size: 10px; fill: #666;">Объект: Hager Mountain / Vault B</text>
+    </svg>
+</div>
+
+</body>
+</html>
