@@ -5,7 +5,6 @@ let size=0;
 let size2=0;
 let drMax=0;
 let dAngle2=30;
-let angle2=0;
 let angle0=0;
 
 
@@ -13,6 +12,7 @@ let angle0=0;
 function drawTree(page,x0,y0,r1,r2,drMax,angle0,dAngle1,dAngle2,fillColor,strokeColor)
 {
     let points=[];
+    let angle2=0;
     for(let angle=angle0;angle<angle0+360;angle+=dAngle1)
     {
         let dr=drMax*Math.cos(Math.PI*angle2/180.0);
@@ -57,7 +57,6 @@ function update()
 function redraw()
 {
     page.clear();
-    //page.rect(x,y,20,20,"red");
     drawTree(page,x,y,size,size2,drMax,angle0,dAngle1,dAngle2,"#4D7831","#2D4521 ");
 
 }

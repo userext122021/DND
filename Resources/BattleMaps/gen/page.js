@@ -31,10 +31,9 @@ class Page
 
      path(x0,y0,points,fillColor,strokeColor)
     {
-       
         let d="M ";
-        d+=points[0].x+x0;
-        d+=" "+points[0].y+y0+" ";
+        d+=(points[0].x+x0);
+        d+=" "+(points[0].y+y0)+" ";
 
         for(let i=1;i<points.length;i++)
         {
