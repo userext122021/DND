@@ -118,4 +118,10 @@ blurry, smooth shading, anti-aliasing, modern digital painting, anime, cartoon, 
 
 limited color palette: 
 
+## Пустой нижней слой для карты пустошей
+
+Seamless flat soil texture, top-down view, cracked dry earth, Fallout 1 aesthetic, pixel art, 16-bit, earth tones, ochre and dusty brown, low fidelity, uniform surface, strictly 2D tile --no objects --no plants --no trees --no rocks --no stones --no debris --no grass --no bushes --no mountains --no structures --no water --no sky --no character
+
+негатив
+tree, bush, rock, stone, grass, plant, wood, ruins, building, mountain, cloud, shadow, person, character, animal, bird, 3d render, perspective, high detail, realistic, photographic, water, river, lake, debris, trash, pebbles, flowers
 
