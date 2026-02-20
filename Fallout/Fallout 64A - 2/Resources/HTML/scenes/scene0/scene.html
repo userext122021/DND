@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Базовые настройки экрана */
+        body {
+            background: #1a1a1a;
+            color: #ff8c00;
+            font-family: sans-serif;
+            text-align: center;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        h1 { margin-top: 50px; font-size: 3rem; }
+
+        /* Контейнер и общие свойства картинок */
+        .slider { position: relative; height: 400px; margin-top: 50px; }
+
+        img {
+            position: absolute;
+            height: 100%;
+            left: 50%;
+            opacity: 0;
+            border: 1px solid #ff8c00;
+            /* Анимация: Название | Длительность | Бесконечно */
+            animation: slide 12s infinite;
+        }
+
+        /* Очередность появления (задержка) */
+        img:nth-child(2) { animation-delay: 4s; }
+        img:nth-child(3) { animation-delay: 8s; }
+
+        /* Эффект: Проявление + Движение влево */
+        @keyframes slide {
+            0%   { opacity: 0; transform: translateX(-40%); }
+            20%  { opacity: 1; }
+            40%  { opacity: 0; transform: translateX(-60%); }
+            100% { opacity: 0; }
+        }
+    </style>
+</head>
+<body onclick="document.querySelector('audio').play()">
+
+    <h1>WAR NEVER CHANGES</h1>
+
+    <div class="slider">
+        <img src="https://images.alphacoders.com">
+        <img src="https://images7.alphacoders.com">
+        <img src="https://images2.alphacoders.com">
+    </div>
+
+    <audio loop>
+        <source src="https://www.soundhelix.com" type="audio/mpeg">
+    </audio>
+
+</body>
+</html>
