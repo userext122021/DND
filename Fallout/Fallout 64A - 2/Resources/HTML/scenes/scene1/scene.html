@@ -15,28 +15,28 @@
         h1 { margin-top: 50px; font-size: 3rem; }
 
         /* Контейнер и общие свойства картинок */
-        .slider { position: relative; height: 400px; margin-top: 50px; }
+        .slider { position: relative; height: 800px; margin-top: 50px; }
 
         img {
             position: absolute;
             height: 100%;
-            left: 50%;
+            left: 10%;
             opacity: 0;
             border: 1px solid #ff8c00;
             /* Анимация: Название | Длительность | Бесконечно */
-            animation: slide 12s infinite;
+            animation: slide 20s linear infinite;
         }
 
         /* Очередность появления (задержка) */
-        img:nth-child(2) { animation-delay: 4s; }
-        img:nth-child(3) { animation-delay: 8s; }
+        img:nth-child(2) { animation-delay: 20s; }
+        img:nth-child(3) { animation-delay: 20s; }
 
         /* Эффект: Проявление + Движение влево */
         @keyframes slide {
-            0%   { opacity: 0; transform: translateX(-40%); }
-            20%  { opacity: 1; }
-            40%  { opacity: 0; transform: translateX(-60%); }
-            100% { opacity: 0; }
+            0%   { opacity: 0; }
+            20% { opacity: 1; transform: translateX(-2%);}
+            80% { opacity: 1; transform: translateX(-8%);}
+            100% { opacity: 0; transform: translateX(-10%);}
         }
     </style>
 </head>
@@ -45,9 +45,9 @@
     <h1>WAR NEVER CHANGES</h1>
 
     <div class="slider">
-        <img src="https://images.alphacoders.com">
-        <img src="https://images7.alphacoders.com">
-        <img src="https://images2.alphacoders.com">
+        <img src="img/1.jpg">
+        <img src="img/2.jpg">
+        <img src="img/3.jpg">
     </div>
 
     <audio loop>
